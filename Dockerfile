@@ -1,6 +1,5 @@
 FROM postgres
 
-USER root
 ADD get_and_load_data.sh /home/
-
-CMD ["/home/get_and_load_data.sh"]
+RUN /bin/bash -s 'chmod +x /home/get_and_load_data.sh'
+CMD ["/bin/bash", "/home/get_and_load_data.sh"]
