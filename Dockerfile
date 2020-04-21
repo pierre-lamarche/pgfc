@@ -1,5 +1,5 @@
 FROM postgres
 
-ADD get_and_load_data.sh .
+ADD get_and_load_data.sh /home/
 
-CMD ["get_and_load_data.sh"]
+CMD ["/home/get_and_load_data.sh"]
