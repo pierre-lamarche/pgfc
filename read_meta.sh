@@ -7,7 +7,7 @@ read_meta () {
 	file_output=$4 
 
 	awk -F ";" 'BEGIN{RS = "\r\n" 
-			print "CREATE TABLE $nom_schema.$nom_table \n("} 
+			print "CREATE TABLE '$nom_schema'.'$nom_table' \n("} 
 			NR > 1 { if ($1 != prev) {
 				if ($5 == "CHAR") print "\t" $1 " CHARACTER(" $6 ")"
 				if ($5 == "NUM") print "\t" $1 " NUMERIC"
