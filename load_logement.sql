@@ -62,7 +62,7 @@ CREATE TABLE rp2016.logement
     STOCD character(2),
     SURF character(1),
     TACTM character(2),
-    TPM character(1,
+    TPM character(1),
     TRANSM character(1),
     TRIRIS character(6),
     TYPC character(1),
