@@ -28,7 +28,7 @@ curl -o /tmp/logement.zip https://www.insee.fr/fr/statistiques/fichier/4229099/R
 unzip /tmp/logement.zip -d /tmp/
 read_meta rp2016 logement /tmp/varmod_LOGEMT_2016.csv /tmp/load_logement.sql
 
-PGPASSWORD=$POSTGRES_PASSWORD psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" /tmp/load_logement.sql
+PGPASSWORD=$POSTGRES_PASSWORD psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" -f /tmp/load_logement.sql
 PGPASSWORD=$POSTGRES_PASSWORD psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" -c "COPY rp2016.logement FROM '/tmp/FD_LOGEMT_2016.csv' DELIMITER ';' CSV HEADER ;"
 rm /tmp/logement.zip
 rm /tmp/FD_LOGEMT_2016.csv 
