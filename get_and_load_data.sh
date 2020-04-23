@@ -20,7 +20,7 @@ read_meta () {
 
 ## create schema rp2016
 
-PGPASSWORD=$POSTGRES_PASSWORD psql-U $POSTGRES_USER -d $POSTGRES_DB -c 'CREATE SCHEMA rp2016'
+PGPASSWORD=$POSTGRES_PASSWORD psql -U $POSTGRES_USER -d $POSTGRES_DB -c 'CREATE SCHEMA rp2016'
 
 ## load logement table
 
