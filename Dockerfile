@@ -10,6 +10,6 @@ RUN apt-get update \
 COPY dl_donnees.sh /home/
 RUN /bin/bash -s 'chmod +x /home/dl_donnees.sh'
 COPY get_and_load_data.sh /docker-entrypoint-initdb.d/
-CMD ["/bin/sh", "/home.dl_donnees.sh"]
+CMD ["/bin/sh", "/home/dl_donnees.sh"]
 #RUN /bin/bash -s 'chmod +x /home/get_and_load_data.sh'
 #CMD ["/bin/sh", "/home/get_and_load_data.sh"]
