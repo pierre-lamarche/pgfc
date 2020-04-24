@@ -15,10 +15,11 @@ read_meta () {
 				if ($5 == "NUM") print "\t" $1 " NUMERIC"
 				}
 			prev = $1}
-			END {print ")"}' $file_input > /tmp/temp.txt
+			END {print ");"
+			print }' $file_input > /tmp/temp.txt
     
     awk 'NR==FNR { n+=1 }
-	     NR!=FNR { if (FNR > 2 && FNR < n-1) print $0 ","
+	     NR!=FNR { if (FNR > 2 && FNR < n-2) print $0 ","
 		    else print $0 }' /tmp/temp.txt /tmp/temp.txt > $file_output
 
     rm /tmp/temp.txt
@@ -35,6 +36,6 @@ unzip /tmp/logement.zip -d /tmp/
 read_meta rp2016 logement /tmp/varmod_LOGEMT_2016.csv /tmp/load_logement.sql
 
 PGPASSWORD=$POSTGRES_PASSWORD psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" -f /tmp/load_logement.sql
-PGPASSWORD=$POSTGRES_PASSWORD psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" -c "COPY rp2016.logement FROM '/tmp/FD_LOGEMT_2016.csv' DELIMITER ';' CSV HEADER ENCODING 'WIN1252' ;"
+PGPASSWORD=$POSTGRES_PASSWORD psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" -c "COPY rp2016.logement FROM '/tmp/FD_LOGEMT_2016.csv' DELIMITER ';' CSV HEADER ;"
 rm /tmp/logement.zip
 rm /tmp/FD_LOGEMT_2016.csv 
