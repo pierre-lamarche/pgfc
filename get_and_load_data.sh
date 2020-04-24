@@ -15,8 +15,7 @@ read_meta () {
 				if ($5 == "NUM") print "\t" $1 " NUMERIC"
 				}
 			prev = $1}
-			END {print ");"
-			print }' $file_input > /tmp/temp.txt
+			END {print ");"}' $file_input > /tmp/temp.txt
     
     awk 'NR==FNR { n+=1 }
 	     NR!=FNR { if (FNR > 2 && FNR < n-2) print $0 ","
