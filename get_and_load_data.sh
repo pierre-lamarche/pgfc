@@ -54,7 +54,7 @@ rm /tmp/FD_LOGEMT_2016.csv
 
 curl -o /tmp/individu_reg.zip https://www.insee.fr/fr/statistiques/fichier/4171523/RP2016_indreg_csv.zip
 unzip /tmp/individu_reg.zip -d /tmp/
-read_meta rp2016 individu_reg /tmp/varmod_INDREG_2016.csv /tmp/load_individu_reg.sql
+read_meta rp2016 individu_reg /tmp/Varmod_INDREG_2016.csv /tmp/load_individu_reg.sql
 
 PGPASSWORD=$POSTGRES_PASSWORD psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" -f /tmp/load_individu_cvi.sql
 PGPASSWORD=$POSTGRES_PASSWORD psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" -c "COPY rp2016.individu_cvi FROM '/tmp/FD_INDREG_2016.csv' DELIMITER ';' CSV HEADER ;"
