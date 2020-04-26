@@ -41,14 +41,14 @@ rm /tmp/FD_LOGEMT_2016.csv
 
 ## load individu canton-ou-ville table
 
-##curl -o /tmp/individu_cvi.zip https://www.insee.fr/fr/statistiques/fichier/4229118/RP2016_INDCVI_csv.zip
-##unzip /tmp/individu_cvi.zip -d /tmp/
+curl -o /tmp/individu_cvi.zip https://www.insee.fr/fr/statistiques/fichier/4229118/RP2016_INDCVI_csv.zip
+unzip /tmp/individu_cvi.zip -d /tmp/
 ##read_meta rp2016 individu_cvi /tmp/varmod_INDCVI_2016.csv /tmp/load_individu_cvi.sql
 ##
-##PGPASSWORD=$POSTGRES_PASSWORD psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" -f /tmp/load_individu_cvi.sql
-##PGPASSWORD=$POSTGRES_PASSWORD psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" -c "COPY rp2016.individu_cvi FROM '/tmp/FD_INDCVI_2016.csv' DELIMITER ';' CSV HEADER ;"
-##rm /tmp/individu_cvi.zip
-##rm /tmp/FD_INDCVI_2016.csv 
+PGPASSWORD=$POSTGRES_PASSWORD psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" -f /tmp/load_individu_cvi.sql
+PGPASSWORD=$POSTGRES_PASSWORD psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" -c "COPY rp2016.individu_cvi FROM '/tmp/FD_INDCVI_2016.csv' DELIMITER ';' CSV HEADER ;"
+rm /tmp/individu_cvi.zip
+rm /tmp/FD_INDCVI_2016.csv 
 
 ## load individu region table
 
@@ -56,8 +56,8 @@ curl -o /tmp/individu_reg.zip https://www.insee.fr/fr/statistiques/fichier/41715
 unzip /tmp/individu_reg.zip -d /tmp/
 read_meta rp2016 individu_reg /tmp/Varmod_INDREG_2016.csv /tmp/load_individu_reg.sql
 
-PGPASSWORD=$POSTGRES_PASSWORD psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" -f /tmp/load_individu_cvi.sql
-PGPASSWORD=$POSTGRES_PASSWORD psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" -c "COPY rp2016.individu_cvi FROM '/tmp/FD_INDREG_2016.csv' DELIMITER ';' CSV HEADER ;"
+PGPASSWORD=$POSTGRES_PASSWORD psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" -f /tmp/load_individu_reg.sql
+PGPASSWORD=$POSTGRES_PASSWORD psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" -c "COPY rp2016.individu_reg FROM '/tmp/FD_INDREG_2016.csv' DELIMITER ';' CSV HEADER ;"
 rm /tmp/individu_reg.zip
 rm /tmp/FD_INDREG_2016.csv 
 
