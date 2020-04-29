@@ -65,7 +65,7 @@ rm /tmp/FD_INDREG_2016.csv
 
 curl -o /tmp/mobsco.zip https://www.insee.fr/fr/statistiques/fichier/4171517/RP2016_mobsco_csv.zip
 unzip /tmp/mobsco.zip -d /tmp/
-read_meta rp2016 mobsco /tmp/varmod_MOBSCO_2016.csv /tmp/load_mobsco.sql
+read_meta rp2016 mobsco /tmp/Varmod_MOBSCO_2016.csv /tmp/load_mobsco.sql
 
 PGPASSWORD=$POSTGRES_PASSWORD psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" -f /tmp/load_mobsco.sql
 PGPASSWORD=$POSTGRES_PASSWORD psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" -c "COPY rp2016.mobsco FROM '/tmp/FD_MOBSCO_2016.csv' DELIMITER ';' CSV HEADER ;"
@@ -76,7 +76,7 @@ rm /tmp/FD_MOBSCO_2016.csv
 
 curl -o /tmp/mobpro.zip https://www.insee.fr/fr/statistiques/fichier/4171531/RP2016_mobpro_csv.zip
 unzip /tmp/mobpro.zip -d /tmp/
-read_meta rp2016 mobpro /tmp/varmod_MOBPRO_2016.csv /tmp/load_mobpro.sql
+read_meta rp2016 mobpro /tmp/Varmod_MOBPRO_2016.csv /tmp/load_mobpro.sql
 
 PGPASSWORD=$POSTGRES_PASSWORD psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" -f /tmp/load_mobpro.sql
 PGPASSWORD=$POSTGRES_PASSWORD psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" -c "COPY rp2016.mobpro FROM '/tmp/FD_MOBPRO_2016.csv' DELIMITER ';' CSV HEADER ;"
@@ -87,7 +87,7 @@ rm /tmp/FD_MOBPRO_2016.csv
 
 curl -o /tmp/mobzelt.zip https://www.insee.fr/fr/statistiques/fichier/4171535/RP2016_mobzelt_csv.zip
 unzip /tmp/mobzelt.zip -d /tmp/
-read_meta rp2016 mobzelt /tmp/varmod_MOBZELT_2016.csv /tmp/load_mobzelt.sql
+read_meta rp2016 mobzelt /tmp/Varmod_MOBZELT_2016.csv /tmp/load_mobzelt.sql
 
 PGPASSWORD=$POSTGRES_PASSWORD psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" -f /tmp/load_mobzelt.sql
 PGPASSWORD=$POSTGRES_PASSWORD psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" -c "COPY rp2016.mobzelt FROM '/tmp/FD_MOBZELT_2016.csv' DELIMITER ';' CSV HEADER ;"
@@ -98,7 +98,7 @@ rm /tmp/FD_MOBZELT_2016.csv
 
 curl -o /tmp/migcom.zip https://www.insee.fr/fr/statistiques/fichier/4171543/RP2016_migcom_csv.zip
 unzip /tmp/migcom.zip -d /tmp/
-read_meta rp2016 migcom /tmp/varmod_MIGCOM_2016.csv /tmp/load_migcom.sql
+read_meta rp2016 migcom /tmp/Varmod_MIGCOM_2016.csv /tmp/load_migcom.sql
 
 PGPASSWORD=$POSTGRES_PASSWORD psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" -f /tmp/load_migcom.sql
 PGPASSWORD=$POSTGRES_PASSWORD psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" -c "COPY rp2016.migcom FROM '/tmp/FD_MIGCOM_2016.csv' DELIMITER ';' CSV HEADER ;"
@@ -109,7 +109,7 @@ rm /tmp/FD_MIGCOM_2016.csv
 
 curl -o /tmp/miggco.zip https://www.insee.fr/fr/statistiques/fichier/4171547/RP2016_miggco_csv.zip
 unzip /tmp/miggco.zip -d /tmp/
-read_meta rp2016 miggco /tmp/varmod_MIGGCO_2016.csv /tmp/load_miggco.sql
+read_meta rp2016 miggco /tmp/Varmod_MIGGCO_2016.csv /tmp/load_miggco.sql
 
 PGPASSWORD=$POSTGRES_PASSWORD psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" -f /tmp/load_miggco.sql
 PGPASSWORD=$POSTGRES_PASSWORD psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" -c "COPY rp2016.miggco FROM '/tmp/FD_MIGGCO_2016.csv' DELIMITER ';' CSV HEADER ;"
@@ -120,7 +120,7 @@ rm /tmp/FD_MIGGCO_2016.csv
 
 curl -o /tmp/migdep.zip https://www.insee.fr/fr/statistiques/fichier/4171551/RP2016_migdep_csv.zip
 unzip /tmp/migdep.zip -d /tmp/
-read_meta rp2016 migdep /tmp/varmod_MIGDEP_2016.csv /tmp/load_migdep.sql
+read_meta rp2016 migdep /tmp/Varmod_MIGDEP_2016.csv /tmp/load_migdep.sql
 
 PGPASSWORD=$POSTGRES_PASSWORD psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" -f /tmp/load_migdep.sql
 PGPASSWORD=$POSTGRES_PASSWORD psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" -c "COPY rp2016.migdep FROM '/tmp/FD_MIGDEP_2016.csv' DELIMITER ';' CSV HEADER ;"
